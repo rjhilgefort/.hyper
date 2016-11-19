@@ -1,16 +1,21 @@
 module.exports = {
   config: {
-    fontSize:        12,
-    fontFamily:      'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
-    cursorColor:     'rgba(248,28,229,0.8)',
-    cursorShape:     'BLOCK', // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
+    fontSize: 12,
+    fontFamily: `
+      "Source Code Pro for Powerline",
+      Menlo,
+      "DejaVu Sans Mono",
+      "Lucida Console",
+      monospace`,
+    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorShape: 'BLOCK', // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     foregroundColor: '#fff',
     backgroundColor: '#000',
-    borderColor:     '#333',
+    borderColor: '#333',
 
     css: '',
     termCSS: '',
-    padding: '12px 14px',
+    padding: '0px 5px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -46,24 +51,58 @@ module.exports = {
     env: {},
 
     // set to false for no bell
-    bell: 'SOUND',
-
-    // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
-
-    // URL to custom bell
+    bell: false,
     // bellSoundURL: 'http://example.com/bell.mp3',
 
-    // for advanced config flags please refer to https://hyper.is/#cfg
+    // if true, selected text will automatically be copied to the clipboard
+    copyOnSelect: true,
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // Advanced Options
+    // https://hyper.is/#cfg
+    ////////////////////////////////////////////////////////////////////////////////
+
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // PLUGIN SETTINGS
+    ////////////////////////////////////////////////////////////////////////////////
+
+    // hyper-material
+    // https://github.com/dotcypress/hyper-material
+
+    // hyperterm-material-theme
+    // https://github.com/nauzethc/hyperterm-material-theme
+    // materialTheme: 'teal',
+    // materialSyntax: 'dark',
+
+    // hyperline
+    // https://www.npmjs.com/package/hyperline
+    hyperline: {
+      color: 'blue'
+    },
+
+    // hyperterm-visor
+    // https://github.com/CWSpear/hyperterm-visor
+    visor: {
+      hotkey: 'CommandOrControl+Shift+Z'
+      // position: 'top', // top, left, right, bottom
+      // width: 200, // Optional, defaults to half of viewable area for horizontal positions, 100% for vertical
+      // height: 900 // Optional, defaults to half of viewable area for vertical positions, 100% for horizontal
+    },
+
+    // hyperterm-1password
+    // https://github.com/sibartlett/hyperterm-1password
+
   },
 
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
-  plugins: [],
+  // MOAR PLUGINS: https://github.com/bnb/awesome-hyper
+  plugins: [
+    "hyper-material",
+    // "hyperterm-material-theme",
+    "hyperline",
+    "hyperterm-visor",
+    "hyperterm-1password"
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
