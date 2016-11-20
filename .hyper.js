@@ -13,9 +13,31 @@ module.exports = {
     backgroundColor: '#000',
     borderColor: '#333',
 
-    css: '',
-    termCSS: '',
-    padding: '0px 5px',
+    css: `
+      .terms_terms {
+        background: url(file://~/sierra-2.jpg) center;
+        background-size: cover;
+      }
+    `,
+
+    termCSS: `
+      x-screen {
+        background: transparent !important;
+      }
+
+      x-row {
+        font-weight: 100 !important;
+      }
+
+      /*
+      x-row span {
+        color: rgb(255, 64, 129);
+        font-weight: 100;
+      }
+      */
+    `,
+
+    padding: '0px 0px 16px 0px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
